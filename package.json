@@ -1,0 +1,27 @@
+{
+  "name": "task-app",
+  "version": "1.0.0",
+  "description": "\"# TaskApp\"",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev" : "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeagwl/TaskApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeagwl/TaskApp/issues"
+  },
+  "homepage": "https://github.com/neeagwl/TaskApp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.17",
+    "nodemon": "^2.0.6",
+    "validator": "^13.1.17"
+  }
+}
