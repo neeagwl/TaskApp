@@ -7,18 +7,7 @@ const Task =require("./models/task");
 const User = require('./models/user');
 
 const app = express()
-const port = process.env.PORT || 3000
-
-const main= async ()=>{
-    // const task =  await Task.findById('5fc4a586cf46cf09f883cdae');
-    // await task.populate('owner').execPopulate();
-    // console.log(task.owner);
-    const user = await User.findById('5fc4a37d79d6990d6c960490');
-    await user.populate('tasks').execPopulate();
-    console.log(user.tasks)
-}
-
-// main();
+const port = process.env.PORT 
 
 
 app.use(express.json())
