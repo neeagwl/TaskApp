@@ -16,6 +16,7 @@ router.post('/users', async (req, res) => {
         const token = await user.generateAuthToken()
         res.status(201).send({ user, token })
     } catch (e) {
+        console.log(e)
         res.status(400).send(e)
     }
 })
@@ -24,7 +25,7 @@ router.post('/users/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
-        res.send({ user, token })
+        res.status(200).send({ user, token })
     } catch (e) {
         res.status(400).send()
     }
@@ -121,8 +122,9 @@ router.delete('/users/me', auth, async (req, res) => {
         const {email,name}=req.user;
         await req.user.remove()
         goodbyeMail(email,name);
-        res.send(req.user)
+        res.status(200).send(req.user)
     } catch (e) {
+        console.log(e)
         res.status(500).send()
     }
 })
